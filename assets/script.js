@@ -19,21 +19,12 @@ const debounce =(func, wait, immediate) =>{
     };
 };
 
+console.log(window.pageYOffset);
 const animeScroll=()=>{
     const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4)
-    target.forEach((element)=>{
-        if(windowTop > element.offsetTop){
-            element.classList.add(animationClass)
-        }else{
-            element.classList.remove(animationClass)
-        }
-    })
+    target.forEach((element)=> element.classList.toggle(animationClass, windowTop > element.offsetTop))
 }
 
-animeScroll()
+animeScroll();
 
-if(target.length) {
-    window.addEventListener('scroll', debounce(function() {
-      animeScroll();
-    }, 200));
-}
+if(target.length) window.addEventListener('scroll', debounce(() => animeScroll(), 200));
