@@ -2,8 +2,9 @@ html{
     scroll-behavior: smooth;
 }
 
-.w3-container > span {
-    white-space: pre-line;
+.w3-container p.w3-text {
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 [data-anime] {
