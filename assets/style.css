@@ -2,6 +2,10 @@ html{
     scroll-behavior: smooth;
 }
 
+main{
+    overflow-x: hidden;
+}
+
 .w3-container p.w3-text {
     max-width: 100%;
     word-wrap: break-word;
